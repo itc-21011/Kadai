@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/basic_nav"
+    app:startDestination="@id/titleFragment">
+
+    <fragment
+        android:id="@+id/titleFragment"
+        android:name="jp.ac.it_college.std.s21011.kadai.TitleFragment"
+        android:label="fragment_title"
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_generationFragment"
+            app:destination="@id/generationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/generationFragment"
+        android:name="jp.ac.it_college.std.s21011.kadai.GenerationFragment"
+        android:label="fragment_generation"
+        tools:layout="@layout/fragment_generation" >
+        <action
+            android:id="@+id/action_generationFragment_to_problemFragment"
+            app:destination="@id/problemFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/problemFragment"
+        android:name="jp.ac.it_college.std.s21011.kadai.ProblemFragment"
+        android:label="fragment_problem"
+        tools:layout="@layout/fragment_problem" >
+        <action
+            android:id="@+id/action_problemFragment_to_resultFragment"
+            app:destination="@id/resultFragment" />
+        <argument android:name="num" />
+    </fragment>
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="jp.ac.it_college.std.s21011.kadai.ResultFragment"
+        android:label="fragment_result"
+        tools:layout="@layout/fragment_result" >
+        <action
+            android:id="@+id/action_resultFragment_to_generationFragment"
+            app:destination="@id/generationFragment" />
+    </fragment>
+</navigation>
