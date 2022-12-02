@@ -11,27 +11,50 @@
         android:label="fragment_title"
         tools:layout="@layout/fragment_title" >
         <action
-            android:id="@+id/action_titleFragment_to_generationFragment"
-            app:destination="@id/generationFragment" />
+            android:id="@+id/titleToSelect"
+            app:destination="@id/GenerationFragment" />
     </fragment>
+
     <fragment
-        android:id="@+id/generationFragment"
+        android:id="@+id/GenerationFragment"
         android:name="jp.ac.it_college.std.s21011.kadai.GenerationFragment"
-        android:label="fragment_generation"
-        tools:layout="@layout/fragment_generation" >
+        android:label="fragmentgeneration"
+        tools:layout="@layout/fragment_generation">
         <action
-            android:id="@+id/action_generationFragment_to_problemFragment"
-            app:destination="@id/problemFragment" />
+            android:id="@+id/selectToQuiz"
+            app:destination="@id/quizFragment" />
+        <argument
+            android:name="isHard"
+            app:argType="boolean" />
     </fragment>
     <fragment
-        android:id="@+id/problemFragment"
-        android:name="jp.ac.it_college.std.s21011.kadai.ProblemFragment"
-        android:label="fragment_problem"
-        tools:layout="@layout/fragment_problem" >
+        android:id="@+id/quizFragment"
+        android:name="jp.ac.it_college.std.s21011.kadai.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" >
+        <argument
+            android:name="pokemonIdList"
+            app:argType="integer[]" />
         <action
-            android:id="@+id/action_problemFragment_to_resultFragment"
+            android:id="@+id/quizToQuiz"
+            app:destination="@id/quizFragment" />
+        <action
+            android:id="@+id/quizToResult"
             app:destination="@id/resultFragment" />
-        <argument android:name="num" />
+        <argument
+            android:name="questionNumber"
+            app:argType="integer"
+            android:defaultValue="1" />
+        <argument
+            android:name="correctCount"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="resultDataArray"
+            app:argType="jp.ac.it_college.std.s21011.kadai.ResultData[]" />
+        <argument
+            android:name="isHard"
+            app:argType="boolean" />
     </fragment>
     <fragment
         android:id="@+id/resultFragment"
@@ -39,7 +62,12 @@
         android:label="fragment_result"
         tools:layout="@layout/fragment_result" >
         <action
-            android:id="@+id/action_resultFragment_to_generationFragment"
-            app:destination="@id/generationFragment" />
-    </fragment>
+            android:id="@+id/resultToTitle"
+            app:destination="@id/titleFragment" />
+        <argument
+            android:name="resultDataArray"
+            app:argType="jp.ac.it_college.std.s21011.kadai.ResultData[]" />
+        <argument
+            android:name="isHard"
+            app:argType="boolean" />    </fragment>
 </navigation>
