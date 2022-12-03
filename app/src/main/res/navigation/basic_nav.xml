@@ -18,7 +18,7 @@
     <fragment
         android:id="@+id/GenerationFragment"
         android:name="jp.ac.it_college.std.s21011.kadai.GenerationFragment"
-        android:label="fragmentgeneration"
+        android:label="fragment_generation"
         tools:layout="@layout/fragment_generation">
         <action
             android:id="@+id/selectToQuiz"
@@ -69,5 +69,6 @@
             app:argType="jp.ac.it_college.std.s21011.kadai.ResultData[]" />
         <argument
             android:name="isHard"
-            app:argType="boolean" />    </fragment>
+            app:argType="boolean" />
+    </fragment>
 </navigation>
